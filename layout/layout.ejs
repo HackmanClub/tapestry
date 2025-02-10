@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Metadata -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="<%= config.description %>">
+    <meta name="author" content="<%= config.author %>">
+    <meta name="title" content="<%= config.title %> - <%= config.subtitle %>">
+    <meta name="theme-color" content="<%= theme.primary_color %>">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="<%= config.title %>">
+    <meta property="og:description" content="<%= config.description %>">
+    <meta property="og:image" content="<%= url_for(theme.banner) %>">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="<%= config.url %>">
+
+    <link rel="icon" href="<%= url_for(theme.favicon) %>">
+
+    <script src="<%= url_for(theme.fontawesome) %>" crossorigin="anonymous"></script>
+
+    <title><%= config.title %></title>
+    <link rel="stylesheet" href="<%= url_for('/css/style.css') %>">
+
+    <style>
+        a:hover {
+            color: <%= theme.primary_color %>;
+        }
+
+        .banner img {
+            border: 2px solid <%= theme.primary_color %>;
+        }
+
+        .avatar img {
+            border: 2px solid <%= theme.primary_color %>;
+        }
+
+        <% if (theme.tag_border) { %>
+            .tags a {
+                border: 1px solid #6c6f72;
+            }
+
+            .tags a:hover {
+                border-color: #9fa5aa;
+            }
+        <% } %>
+    </style>
+</head>
+<body>
+    <main>
+        <% if (theme.scarves) { %>
+            <%- include('_partial/scarves') %>
+        <% } %>
+        <% if (theme.sidebar) { %>
+        <div class="sidebar">
+            <!-- Avatar -->
+            <a href="/">
+                <div class="sidebar-header">
+                    <div class="banner">
+                        <img src="<%= url_for(theme.banner) %>" alt="<%= config.author %>">
+                    </div>
+
+                    <div class="avatar">
+                        <img src="<%= url_for(theme.avatar) %>" alt="<%= config.author %>">
+                    </div>
+                </div>
+            </a>
+
+            <!-- Sidebar Menu -->
+            <nav>
+                <% theme.sidebar_menu.forEach(function(menu) { %> 
+                    <% if (menu.enable) { %>
+                        <a href="<%= menu.url %>">
+                            <%= menu.name %>
+                        </a>
+                    <% } %>
+                <% }); %>
+            </nav>
+
+            <!-- Sidebar Content -->
+            <div class="sidebar-content">
+                <a href="/">
+                    <h1 class="title"><%= config.title %></h1>
+                </a>
+                <p><%= config.description %></p>
+                <div class="social">
+                    <% theme.social.forEach(function(social) { %> 
+                        <% if (social.enable) { %>
+                            <span class="social-icon">
+                                <a href="<%= social.url %>" target="_blank">
+                                    <% if (theme.fontawesome) { %>
+                                        <i class="<%= social.icon %>"></i>
+                                    <% } else { %>
+                                        <img src='<%= url_for(theme.avatar) %>'></img>
+                                    <% } %>
+                                </a>
+                            </span>
+                            <% } %>
+                    <% }); %>
+                </div>
+            </div>
+
+            <!-- Sidebar Footer -->
+            <div class="footer smoll">
+                <% if (theme.hexo) { %>
+                    <div class="hexo footer">
+                        Powered by Hexo, theme <a href="https://tapestry.demo.bashynx.dev" target="_blank">Tapestry</a><br>
+                    </div>
+                <% } %>
+                <% if (theme.copyright) { %>
+                    <div class="copy footer">
+                        &copy; <%= theme.copy_year %> <%= config.author %>
+                    </div>
+                <% } %>
+            </div>
+        </div>
+        <% } %>
+        <div class="content">
+            <%- body %>
+        </div>
+    </main>
+</body>
+</html>

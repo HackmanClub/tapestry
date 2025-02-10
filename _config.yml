@@ -1,0 +1,84 @@
+name: Tapestry
+version: 0.1
+copy_year: 2025
+
+# Site configuration
+avatar: images/assets/avatar.jpg  # Avatar image, also fontawesome fallback
+banner: images/assets/banner.jpg
+favicon: images/assets/avatar.jpg
+fontawesome: https://kit.fontawesome.com/bae8420862.js    # Use your own kit here
+primary_color: '#ffc107 !important'
+tag_border: false   # Add border to tags
+column: 2    # Number of columns (2 or 3)
+sidebar: true    # Display sidebar
+scarves: true    # Display scarves
+
+#Footer
+hexo: true    # Display "Powered by Hexo" in footer
+copyright: true    # Display copyright
+
+# Scarves (links on top right of screen) (add more / remove as needed)
+# Defaults into FontAwesome if no image provided
+# Disables scarf if no image, and font awesome not configured
+scarf:
+  - url: /      # Example Usecase for image
+    image: images/assets/scarves/scarf.png
+    icon: false
+    enable: true
+    color: #fff
+    alt: Example
+  - url: /      # Example Usecase for FontAwesome
+    image: false
+    icon: fa-solid fa-heart
+    enable: true
+    color: false
+    alt: Example
+
+# Enable or disable social links (add more / remove as needed)
+social:
+  - url: https://www.instagram.com/
+    icon: fab fa-instagram
+    enable: true
+  - url: https://discord.com/
+    icon: fab fa-discord
+    enable: true
+  - url: https://www.twitch.tv/
+    icon: fab fa-twitch
+    enable: false
+  - url: https://www.goodreads.com/
+    icon: fab fa-goodreads
+    enable: false
+  - url: https://www.linkedin.com/  
+    icon: fab fa-linkedin
+    enable: true
+  - url: https://www.twitter.com/
+    icon: fab fa-twitter
+    enable: true
+  - url: https://www.facebook.com/
+    icon: fab fa-facebook
+    enable: false
+  - url: https://www.youtube.com/
+    icon: fab fa-youtube
+    enable: false
+  - url: https://www.exapmle.com/
+    icon: fab fa-hashtag
+    enable: false
+
+# Sidebar menu configuration (add more / remove as needed)
+sidebar_menu:
+  - enable: true
+    name: Home
+    url: /
+  - enable: true
+    name: Get Hexo
+    url: https://hexo.io/docs/setup
+  - enable: true
+    name: Get Tapestry
+    url: https://tapestry.demo.bashynx.dev
+  - enable: true
+    name: Bashynx
+    url: https://bashynx.com
+  - enable: true
+    name: The Hackman Club
+    url: https://blog.hackman.club
+    

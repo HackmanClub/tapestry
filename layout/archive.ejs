@@ -1,0 +1,9 @@
+<% site.tags.forEach(function(tag) { %>
+  <h2><%= tag.name %></h2>
+  <ul>
+    <% tag.posts.forEach(function(post) { %>
+      <li><a href="<%= post.url %>"><%= post.title %></a></li>
+    <% }); %>
+  </ul>
+<% }); %>
+

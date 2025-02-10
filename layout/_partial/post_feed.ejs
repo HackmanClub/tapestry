@@ -1,0 +1,18 @@
+<!-- This is the template for the post. It is used to display the posts in the feeds. -->
+<div class="post">
+    <% if(post.photos) { %>
+        <div class="cover">
+            <img class="gallery" src="<%- config.root %><%- post.photos %>" alt="<%- post.title || "Untitled" %>">
+        </div>
+    <% } %>
+    <div class="post-header">
+        <h2><%= post.title || "Untitled" %></h2>
+        <a href='<%= url_for(post.path) %>'><%- include('date', { date: post.date.toISOString() }) %></a>
+        <p><%= post.description %></p>
+        <div class="tags smoll">
+            <% post.tags.data.forEach(function(tag) { %>
+                <a href="<%= url_for('/tags/' + tag.name) %>">#<%= tag.name %></a>
+            <% }); %>
+        </div>
+    </div>
+</div>

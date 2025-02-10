@@ -1,0 +1,17 @@
+<div class="scarves">
+    <% theme.scarf.forEach(function(scarf, index) { %> 
+        <% if (scarf.enable) { %>
+            <a href="<%= scarf.url %>">
+                <div class="scarf" title="<%= scarf.alt %>" style="right: <%= index * 30 %>px;
+                                margin-top:-<%= ( (index % 5) * 10) + 40 %>px;
+                                background-color:<%= scarf.color ? scarf.color : theme.primary_color %>;">
+                    <% if(scarf.image) { %>
+                        <img class= "logo" src="<%= url_for(scarf.image) %>" alt="<%= scarf.alt %>">
+                    <% } else if(scarf.icon) { %>
+                        <i class='logo <%= scarf.icon %>'></i>
+                    <% } else%>
+                </div>
+            </a>
+        <% } %>
+    <% }); %>
+</div>

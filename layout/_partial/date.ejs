@@ -1,0 +1,11 @@
+<div class="date smoll">
+    <% 
+        const posted = new Date(date);
+        const now = new Date();
+        const year = 365 * 24 * 60 * 60 * 1000;
+        const format = (now - posted) < year ? 
+            { day: 'numeric', month: 'long', hour: 'numeric', minute: 'numeric', hour12: true } : 
+            { day: 'numeric', month: 'long', year: 'numeric', hour: 'numeric', minute: 'numeric', hour12: true };
+    %>
+    <%= posted.toLocaleString('en-US', format ) %>
+</div>
