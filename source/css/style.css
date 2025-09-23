@@ -273,13 +273,6 @@ img:hover {
 }
 
 /* Post */
-.column {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-}
-
 .post-header {
     line-height: 100%;
     color:#343a40;

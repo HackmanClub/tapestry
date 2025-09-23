@@ -9,7 +9,6 @@ favicon: images/assets/avatar.jpg
 fontawesome: https://kit.fontawesome.com/bae8420862.js    # Use your own kit here
 primary_color: '#ffc107 !important'
 tag_border: false   # Add border to tags
-column: 2    # Number of columns (2 or 3)
 sidebar: true    # Display sidebar
 scarves: true    # Display scarves
 
