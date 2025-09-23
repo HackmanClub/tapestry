@@ -21,13 +21,13 @@ copyright: true    # Display copyright
 # Defaults into FontAwesome if no image provided
 # Disables scarf if no image, and font awesome not configured
 scarf:
-  - url: /      # Example Usecase for image
+  - url: tags/baking      # Example Usecase for image
     image: images/assets/scarves/scarf.png
     icon: false
     enable: true
-    color: #fff
+    color: false
     alt: Example
-  - url: /      # Example Usecase for FontAwesome
+  - url: tags/photo      # Example Usecase for FontAwesome
     image: false
     icon: fa-solid fa-heart
     enable: true
@@ -45,9 +45,9 @@ social:
   - url: https://www.twitch.tv/
     icon: fab fa-twitch
     enable: false
-  - url: https://www.goodreads.com/
-    icon: fab fa-goodreads
-    enable: false
+  - url: https://mastodon.social
+    icon: fab fa-mastodon
+    enable: true
   - url: https://www.linkedin.com/  
     icon: fab fa-linkedin
     enable: true
