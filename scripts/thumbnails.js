@@ -19,9 +19,8 @@ hexo.extend.filter.register('after_init', async function() {
 
     // Thumbnail sizes
     const sizes = [
-        { name: 'small', width: 333 },      // Three-column layout
-        { name: 'medium', width: 666 },     // Two-column layout
-        { name: 'large', width: 1000 }      // Normal post
+        { name: 'small', width: 512 },      // Three-column layout
+        { name: 'large', width: 1024 }      // Normal post
     ];
 
     const getAllFilesInclSubfolders = (dir) => {

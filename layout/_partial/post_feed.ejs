@@ -1,9 +1,9 @@
 <!-- This is the template for the post. It is used to display the posts in the feeds. -->
-<div class="post">
+<div class="post post-feed">
     <% if(post.photos) { %>
         <div class="cover">
             <a href='<%= url_for(post.path) %>'>
-                <img class="gallery" src="<%- config.root %>thumbnails/<%- (theme.column == 2 ? 'medium' : 'small') + '-' + post.photos[0].replace(/^images\//, '') %>" alt="<%- post.title || 'Untitled' %>">
+                <img class="gallery" src="<%- config.root %>thumbnails/small-<%- post.photos[0].replace(/^images\//, '') %>" alt="<%- post.title || 'Untitled' %>">
             </a>
         </div>
     <% } %>

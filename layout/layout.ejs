@@ -21,6 +21,28 @@
     <script src="<%= url_for(theme.fontawesome) %>" crossorigin="anonymous"></script>
     <script src="<%- config.root %>js/infinite-scroll.js"></script>
 
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+    <script src="https://unpkg.com/infinite-scroll@4/dist/infinite-scroll.pkgd.min.js"></script>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+        const grid = document.querySelector('#masonry');
+        const msn = new Masonry(grid, { itemSelector: '.post', percentPosition: true, gutter: 16 });
+
+        imagesLoaded(grid, () => msn.layout());
+
+        const infScroll = new InfiniteScroll(grid, {
+            path: '.pagination a',
+            append: '.post', 
+            outlayer: msn,
+            history: false
+        });
+
+        });
+    </script>
+
     <title><%= config.title %></title>
     <link rel="stylesheet" href="<%= url_for('/css/style.css') %>">
 

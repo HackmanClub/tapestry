@@ -1,31 +1,12 @@
 <!-- Default number of columns is two. If 3 is defined, then third column is added-->
-<% columns = theme.column; %> <!-- Number of columns -->
-<div class="posts-container">
-    <div class="column column-0">
-        <% item.forEach(function(post, index) { %>
-            <% if (index % columns === 0) { %>
-                <%- include('post_feed', { post: post }) %>
-            <% } %>
-        <% }); %>
-    </div>
-    <div class="column column-1">
-        <% item.forEach(function(post, index) { %>
-            <% if (index % columns === 1) { %>
-                <%- include('post_feed', { post: post }) %>
-            <% } %>
-        <% }); %>
-    </div>
-    <!-- Condition for column number 3 -->
-    <% if (columns === 3) { %>
-        <div class="column column-2">
-            <% item.forEach(function(post, index) { %>
-                <% if (index % columns === 2) { %>
-                    <%- include('post_feed', { post: post }) %>
-                <% } %>
-            <% }); %>
-        </div>
-    <% } %>
+<div id="masonry">
+    <% page.posts.forEach(function(post) { %>
+        <%- include('post_feed', { post: post }) %>
+    <% }); %>
 </div>
-<div id="loader" style="text-align: center; display: none;">
-    <p>Loading more posts...</p>
+
+<div class="pagination">
+    <% if (page.next) { %>
+        <a href="<%- url_for(page.next_link) %>"></a>
+    <% } %>
 </div>
