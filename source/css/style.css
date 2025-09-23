@@ -69,11 +69,11 @@ a {
 }
 
 .scarf .logo {
-    width:100%;
+    width:21px;
     bottom: 0px;
     font-size: 15px;
     text-align: center;
-    padding: 5px 0;
+    padding: 5px 2px;
     position: absolute;
     object-fit: cover;
 }
@@ -179,19 +179,16 @@ nav a {
     color: #dcdcdf !important;
 }
 
-/* Small devices (phones, 0-576px) */
-@media (max-width: 576px) {
-    body{
-        width: 400px;
-    }
-}
-
 @media (max-width: 768px) {
     .sidebar-content {
         display: none;
     }
 
     .post_description {
+        display: none;
+    }
+
+    .footer {
         display: none;
     }
 
@@ -286,7 +283,7 @@ img:hover {
     font-style: italic;
 }
 
-/* Post - Top section */
+/* Poskt - Top section */
 .article {
     font-size: 35px !important;
     line-height: 40px !important;

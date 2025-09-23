@@ -4,13 +4,10 @@
         <h1 class="article"><%= page.title  || "Untitled" %></h1>
         <% if(page.photos) { %>
             <div class="cover">
-                <img class="gallery" src="<%- config.root %><%- page.photos %>" alt="<%- page.title || "Untitled" %>">
+                <img class="gallery" src="<%- config.root %>thumbnails/large-<%- page.photos[0].replace(/^images\//, '')%>" alt="<%- page.title || "Untitled" %>">
             </div>
         <% } %>
-        <p class="post_description"><%= page.description %></p>
-        <% if(page.content) { %>
-            <hr class="page-divider">
-        <% } %>
+        <p><%= page.description %></p>
         <a href='<%= url_for(page.path) %>' class="page-date"><%- include('date', { date: page.date.toISOString() }) %></a>
     </div>
     <div class="post-content">

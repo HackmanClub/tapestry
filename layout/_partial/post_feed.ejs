@@ -2,16 +2,18 @@
 <div class="post">
     <% if(post.photos) { %>
         <div class="cover">
-            <img class="gallery" src="<%- config.root %><%- post.photos %>" alt="<%- post.title || "Untitled" %>">
+            <a href='<%= url_for(post.path) %>'>
+                <img class="gallery" src="<%- config.root %>thumbnails/small-<%- post.photos[0].replace(/^images\//, '') %>" alt="<%- post.title || "Untitled" %>">
+            </a>
         </div>
     <% } %>
     <div class="post-header">
-        <h2><%= post.title || "Untitled" %></h2>
-        <a href='<%= url_for(post.path) %>'><%- include('date', { date: post.date.toISOString() }) %></a>
-        <p><%= post.description %></p>
+        <a href='<%= url_for(post.path) %>'><h2><%= post.title || "Untitled" %></h2>
+        <%- include('date', { date: post.date.toISOString() }) %></a>
+        <p class="post_description"><%= post.description %></p>
         <div class="tags smoll">
             <% post.tags.data.forEach(function(tag) { %>
-                <a href="<%= url_for('/tags/' + tag.name) %>">#<%= tag.name %></a>
+                <a href="<%= url_for('/tags/' + tag.slug || tag.name.replace(/\s+/g, '-')) %>">#<%= tag.name %></a>
             <% }); %>
         </div>
     </div>
