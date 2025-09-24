@@ -108,13 +108,12 @@ sidebar_menu:
 
 - Put post images in `source/images/`
 - The theme generates thumbnails automatically in `source/thumbnails/`
-- Use `small-` or `large-` in templates depending on your layout.
 
 Example in a template:
 
 ```ejs
 <% if (post.photos && post.photos.length) { %>
-  <img class="gallery" src="<%- config.root %>thumbnails/small-<%- post.photos[0].replace(/^images\//,'') %>" alt="<%- post.title %>">
+  <img class="gallery" src="<%- config.root %>thumbnails/<%- post.photos[0].replace(/^images\//, '') %>" alt="<%- post.title || 'Untitled' %>">
 <% } %>
 ```
 
