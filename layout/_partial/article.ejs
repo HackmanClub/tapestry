@@ -4,7 +4,7 @@
         <h1 class="article"><%= page.title  || "Untitled" %></h1>
         <% if(page.photos) { %>
             <div class="cover">
-                <img class="gallery" src="<%- config.root %>thumbnails/large-<%- page.photos[0].replace(/^images\//, '')%>" alt="<%- page.title || "Untitled" %>">
+                <img class="gallery" src="<%- config.root %><%- page.photos[0] %>" alt="<%- page.title || "Untitled" %>">
             </div>
         <% } %>
         <p><%= page.description %></p>
