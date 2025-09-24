@@ -2,7 +2,7 @@
 
 Tapestry is a Hexo theme designed for tumblr style gallery blog feed.
 
-I am using this theme for a personal blog, or you can check the official theme preview.
+I am using this theme for a [personal blog](https://blog.bashynx.com/), or you can check the [official theme preview](https://tapestry.demo.bashynx.dev/).
 
 ---
 
@@ -15,7 +15,7 @@ cd your-hexo-project
 git clone https://github.com/HackmanClub/tapestry.git themes/tapestry
 ```
 
-1. Set the theme in Hexo’s main \_config.yml:
+1. Set the theme in Hexo’s main `_config.yml`:
 
 ```yaml
 theme: tapestry
@@ -31,7 +31,7 @@ npm install sharp
 
 ## 2. Configuration
 
-The theme uses its own \_config.yml inside themes/tapestry/. You will need to copy / rename \_EXAMPLE_config.yml as a starting point:
+The theme uses its own `_config.yml` inside `themes/tapestry/`. You will need to copy / rename `_EXAMPLE_config.yml` as a starting point:
 
 ```bash
 cp themes/tapestry/_EXAMPLE_config.yml themes/tapestry/_config.yml
@@ -41,11 +41,11 @@ cp themes/tapestry/_EXAMPLE_config.yml themes/tapestry/_config.yml
 
 #### Site Settings
 
-- avatar, banner, favicon: paths to your images.
-- primary_color: main color for your theme.
-- tag_border: add borders around tags.
-- sidebar: show or hide the sidebar.
-- scarves: enable or disable scarves links.
+- `avatar`, `banner`, `favicon`: paths to your images.
+- `primary_color`: main color for your theme.
+- `tag_border`: add borders around tags.
+- `sidebar`: show or hide the sidebar.
+- `scarves`: enable or disable scarves links.
 
 #### Scarves
 
@@ -65,11 +65,11 @@ scarf:
     alt: Example
 ```
 
-- url – link target
-- image – path to scarf image
-- icon – FontAwesome icon class
-- enable – show/hide scarf
-- alt – accessibility text
+- `url` – link target
+- `image` – path to scarf image
+- `icon` – FontAwesome icon class
+- `enable` – show/hide scarf
+- `alt` – accessibility text
 
 #### Social Links
 
@@ -98,17 +98,17 @@ sidebar_menu:
     url: https://hexo.io/docs/setup
 ```
 
-- enable – show/hide
-- name – link text
-- url – destination
+- `enable` – show/hide
+- `name` – link text
+- `url` – destination
 
 ---
 
 ## 3. Using Thumbnails
 
-- Put post images in source/images/
-- The theme generates thumbnails automatically in source/thumbnails/
-- Use small- or large- in templates depending on your layout.
+- Put post images in `source/images/`
+- The theme generates thumbnails automatically in `source/thumbnails/`
+- Use `small-` or `large-` in templates depending on your layout.
 
 Example in a template:
 
@@ -118,7 +118,7 @@ Example in a template:
 <% } %>
 ```
 
-> ⚠️ Only shows image if post.photos exists.
+> ⚠️ Only shows image if `post.photos` exists.
 
 ---
 
@@ -131,5 +131,5 @@ hexo clean
 hexo s
 ```
 
-- Visit http://localhost:4000
+- Visit `http://localhost:4000`
 - Changes in templates or CSS are reflected immediately.
