@@ -117,7 +117,7 @@ Example in a template:
 <% } %>
 ```
 
-> ⚠️ Only shows image if `post.photos` exists.
+> ⚠️ Only shows image if `post.photos` exists, and it will only show the first image.
 
 ---
 
