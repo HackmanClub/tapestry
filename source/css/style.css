@@ -283,6 +283,12 @@ img:hover {
     font-style: italic;
 }
 
+iframe {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+}
+
 /* Post - Top section */
 .article {
     font-size: 35px !important;

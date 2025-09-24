@@ -1,6 +1,6 @@
 <!-- This is the template for the post. It is used to display the posts in the feeds. -->
 <div class="post post-feed">
-    <% if(post.photos) { %>
+    <% if(post.photos && post.photos.length) { %>
         <div class="cover">
             <a href='<%= url_for(post.path) %>'>
                 <img class="gallery" src="<%- config.root %>thumbnails/<%- post.photos[0].replace(/^images\//, '') %>" alt="<%- post.title || 'Untitled' %>">

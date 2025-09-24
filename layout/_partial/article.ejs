@@ -2,7 +2,7 @@
 <div class="post">
     <div class="post-header">
         <h1 class="article"><%= page.title  || "Untitled" %></h1>
-        <% if(page.photos) { %>
+        <% if(page.photos && page.photos.length) { %>
             <div class="cover">
                 <img class="gallery" src="<%- config.root %><%- page.photos[0] %>" alt="<%- page.title || "Untitled" %>">
             </div>
