@@ -11,6 +11,8 @@ primary_color: '#ffc107 !important'
 tag_border: false   # Add border to tags
 sidebar: true    # Display sidebar
 scarves: true    # Display scarves
+visitCounter: false  # Insert a link for visit counter, eg: '<script data-goatcounter="https://x.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>'
+
 
 #Footer
 hexo: true    # Display "Powered by Hexo" in footer

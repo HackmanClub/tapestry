@@ -25,7 +25,9 @@
     <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
     <script src="https://unpkg.com/infinite-scroll@4/dist/infinite-scroll.pkgd.min.js"></script>
 
-    <script data-goatcounter="https://bashynx.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+    <% if (theme.visitCounter) { %>
+        <%- theme.visitCounter %>
+    <% } %>
 
 
     <script>
