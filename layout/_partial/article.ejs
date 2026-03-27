@@ -8,7 +8,9 @@
             </div>
         <% } %>
         <p><%= page.description %></p>
-        <a href='<%= url_for(page.path) %>' class="page-date"><%- include('date', { date: page.date.toISOString() }) %></a>
+        <div class="date smoll">
+            <a href='<%= url_for(page.path) %>' class="page-date"><%- include('date', { date: page.date.toISOString() }) %></a>
+        </div>
     </div>
     <div class="post-content">
         <%- page.content %>

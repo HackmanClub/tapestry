@@ -9,7 +9,9 @@
     <% } %>
     <div class="post-header">
         <a href='<%= url_for(post.path) %>'><h2><%= post.title || "Untitled" %></h2>
-        <%- include('date', { date: post.date.toISOString() }) %></a>
+        <div class="date smoll">
+            <%- include('date', { date: post.date.toISOString() }) %></a>
+        </div>
         <p class="post_description"><%= post.description %></p>
         <div class="tags smoll">
             <% post.tags.data.forEach(function(tag) { %>

@@ -1,11 +1,20 @@
-<div class="date smoll">
-    <% 
-        const posted = new Date(date);
-        const now = new Date();
-        const year = 365 * 24 * 60 * 60 * 1000;
-        const format = (now - posted) < year ? 
-            { day: 'numeric', month: 'long', hour: 'numeric', minute: 'numeric', hour12: true } : 
-            { day: 'numeric', month: 'long', year: 'numeric', hour: 'numeric', minute: 'numeric', hour12: true };
-    %>
-    <%= posted.toLocaleString('en-US', format ) %>
-</div>
+
+<% { 
+    const posted = new Date(date);
+    const now = new Date();
+    const day = ((d => {
+        if (d > 3 && d < 21) return d + 'th';
+        switch (d % 10) {
+            case 1: return d + 'st';
+            case 2: return d + 'nd';
+            case 3: return d + 'rd';
+            default: return d + 'th';
+        }
+    })(posted.getDate()));
+
+    const options = now.getFullYear() === posted.getFullYear()
+        ? { month: 'long', hour: 'numeric', minute: 'numeric', hour12: true }
+        : { year: 'numeric', month: 'long'};
+%>
+    <%= day %> <%= posted.toLocaleString('en-US', options).replace(/^(\d+)\s/, '') %>
+<% } %>
