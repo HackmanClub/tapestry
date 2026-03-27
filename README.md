@@ -2,7 +2,7 @@
 
 Tapestry is a Hexo theme designed for tumblr style gallery blog feed.
 
-I am using this theme for a [personal blog](https://blog.bashynx.com/), or you can check the [official theme preview](https://tapestry.demo.bashynx.dev/).
+I am using this theme for a [personal blog](https://blog.bashynx.com/).
 
 ---
 
