@@ -46,6 +46,7 @@ social:
     enable: false
   - url: https://mastodon.social
     icon: fab fa-mastodon
+    relme: true               # rel="me" for verifying your blog / site
     enable: true
   - url: https://www.linkedin.com/  
     icon: fab fa-linkedin

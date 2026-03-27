@@ -25,6 +25,8 @@
     <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
     <script src="https://unpkg.com/infinite-scroll@4/dist/infinite-scroll.pkgd.min.js"></script>
 
+    <script data-goatcounter="https://bashynx.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -111,7 +113,11 @@
                     <% theme.social.forEach(function(social) { %> 
                         <% if (social.enable) { %>
                             <span class="social-icon">
-                                <a href="<%= social.url %>" target="_blank">
+                                <% if (social.relme) { %>
+                                    <a rel="me" href="<%= social.url %>" target="_blank">
+                                <% } else { %>
+                                    <a href="<%= social.url %>" target="_blank">
+                                <% } %>
                                     <% if (theme.fontawesome) { %>
                                         <i class="<%= social.icon %>"></i>
                                     <% } else { %>
